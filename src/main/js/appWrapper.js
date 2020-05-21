@@ -4,7 +4,6 @@ import { Container, Menu } from "semantic-ui-react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import App from "./components/app";
 import Stats from "./components/stats";
-import Stats2 from "./components/stats";
 
 const AppWrapper = () => {
   return (
@@ -26,7 +25,7 @@ const AppWrapper = () => {
             </Route>
             <Route exact path="/statistics">
               <Stats />
-              <Stats2 />
+              <Stats />
             </Route>
           </Switch>
         </Container>

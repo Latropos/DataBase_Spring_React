@@ -3,56 +3,60 @@ import { PieChart, Pie } from "recharts";
 import { Segment, Header } from "semantic-ui-react";
 const data01 = [
   {
-    name: "Group A",
+    name: "A",
     value: 400,
   },
   {
-    name: "Group B",
+    name: "B",
     value: 300,
   },
   {
-    name: "Group C",
+    name: "C",
     value: 300,
   },
   {
-    name: "Group D",
+    name: "D",
     value: 200,
   },
   {
-    name: "Group E",
+    name: "E",
     value: 278,
   },
   {
-    name: "Group F",
+    name: "F",
     value: 189,
   },
 ];
 const data02 = [
   {
-    name: "Group A",
+    name: "A",
     value: 2400,
   },
   {
-    name: "Group B",
+    name: "B",
     value: 4567,
   },
   {
-    name: "Group C",
+    name: "C",
     value: 1398,
   },
   {
-    name: "Group D",
+    name: "D",
     value: 9800,
   },
   {
-    name: "Group E",
+    name: "E",
     value: 3908,
   },
   {
-    name: "Group F",
+    name: "F",
     value: 4800,
   },
 ];
+
+let renderLabel = function(entry) {
+  return entry.name;
+}
 
 const Stats = () => {
   return (
@@ -78,44 +82,12 @@ const Stats = () => {
               innerRadius={60}
               outerRadius={80}
               fill="#82ca9d"
-              label
+              label={renderLabel}
           />
         </PieChart>
       </Segment>
   );
 };
 
-
-const Stats2 = () => {
-  return (
-      <Segment>
-        <Header as="h3">Statistics</Header>
-        <hr />
-        <PieChart width={730} height={250}>
-          <Pie
-              data={data01}
-              dataKey="value"
-              nameKey="name"
-              cx="50%"
-              cy="50%"
-              outerRadius={50}
-              fill="#82ca9d"
-          />
-          <Pie
-              data={data02}
-              dataKey="value"
-              nameKey="name"
-              cx="50%"
-              cy="50%"
-              innerRadius={60}
-              outerRadius={80}
-              fill="#8884d8"
-              label
-          />
-        </PieChart>
-      </Segment>
-  );
-};
 
 export default Stats;
-export default Stats2;
