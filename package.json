@@ -1,0 +1,35 @@
+{
+  "name": "spring-data-mongo-reactjs",
+  "version": "0.1.0",
+  "description": "Demo of ReactJS + Spring Data REST + Mongodb",
+  "keywords": [
+    "rest",
+    "hateoas",
+    "spring",
+    "data",
+    "react"
+  ],
+  "scripts": {
+    "start": "webpack-dev-server --open --mode development",
+    "watch": "webpack --watch -d --output ./src/main/resources/static/built/bundle.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/plugin-transform-runtime": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-react": "^7.9.4",
+    "babel-loader": "^8.1.0",
+    "html-loader": "^1.1.0",
+    "html-webpack-plugin": "^4.3.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.9.14",
+    "@material-ui/icons": "^4.9.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "semantic-ui-react": "^0.88.2"
+  }
+}
