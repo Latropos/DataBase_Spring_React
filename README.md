@@ -31,5 +31,7 @@ The easiest way to run mongodb is via a Docker container. Run:
 
 ```
 docker run -it -p 27017:27017 --name mongo mongo
+
+docker run -it -p 27017:27017 mongo
 ```
 
