@@ -19,17 +19,24 @@ Just use the gradle wrapper
 ```
 
 If you want to reload the application after doing some changes, run (while the above is still running, in another terminal):
-
+However it usually doesn't work (it works for single page apps), so you have to kill and revoke the above
 ```
 ./gradlew compileJava
 ```
-
+Opens here: http://localhost:8080/
 
 #### Running mongodb in docker
 
 The easiest way to run mongodb is via a Docker container. Run:
-
+(First time)
 ```
+sudo systemctl start docker
 docker run -it -p 27017:27017 --name mongo mongo
+```
+
+(later)
+```
+sudo systemctl start docker
+docker run -it -p 27017:27017 mongo
 ```
 
