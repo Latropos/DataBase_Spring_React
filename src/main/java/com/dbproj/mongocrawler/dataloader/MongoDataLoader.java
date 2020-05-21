@@ -25,6 +25,7 @@ public class MongoDataLoader implements CommandLineRunner {
         // save a couple of customers
         repository.save(new Customer("Alice", "Smith"));
         repository.save(new Customer("Bob", "Smith"));
+        repository.save(new Customer("Karolina", "Cynk"));
 
 
         // fetch all customers
