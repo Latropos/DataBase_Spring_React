@@ -16,6 +16,7 @@ const App = () => {
   const [loading, setLoading] = useState(false);
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
+  const [questions, setQuestions] = useState([]);
 
   const submitForm = async () => {
     console.log(query);
@@ -31,6 +32,7 @@ const App = () => {
     console.log(jsonBody);
     setLoading(false);
     setResults(jsonBody);
+    setQuestions(jsonBody)
   };
 
   const addPerson = async (firstName, lastName) => {
@@ -52,6 +54,7 @@ const App = () => {
     setLoading(true);
     await deleteAction("/api/questions/", id);
     setResults([]);
+    setQuestions([]);
     setLoading(false);
   };
 
