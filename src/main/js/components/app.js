@@ -10,7 +10,7 @@ import {
   Header,
 } from "semantic-ui-react";
 import { get, post, deleteAction } from "../apiService";
-import Person from "../forms/Person";
+import QuestionForm from "../forms/QuestionForm";
 
 const App = () => {
   const [loading, setLoading] = useState(false);
@@ -19,7 +19,7 @@ const App = () => {
 
   const submitForm = async () => {
     console.log(query);
-    let baseUrl = "/api/customers/";
+    let baseUrl = "/api/questions/";
     setLoading(true);
     let params;
     if (query) {
@@ -35,7 +35,7 @@ const App = () => {
 
   const addPerson = async (firstName, lastName) => {
     setLoading(true);
-    const respose = await post("/api/customers/", {
+    const respose = await post("/api/questions/", {
       firstName,
       lastName,
     });
@@ -50,7 +50,7 @@ const App = () => {
   const deleteById = async (id) => {
     console.log("deleting ", id);
     setLoading(true);
-    await deleteAction("/api/customers/", id);
+    await deleteAction("/api/questions/", id);
     setResults([]);
     setLoading(false);
   };
@@ -87,7 +87,7 @@ const App = () => {
   return (
     <Container>
       <Header as="h3">Main application</Header>
-      <Person onSubmit={addPerson} />
+      <QuestionForm onSubmit={addPerson} />
       <hr />
       <Segment color="blue">
         <Form onSubmit={submitForm}>
