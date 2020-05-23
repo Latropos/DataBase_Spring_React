@@ -18,22 +18,32 @@ public class Question {
 
     public Question(String question, int noAnswers) {
         this.question = question;
-        NoAnswers = noAnswers;
+        this.NoAnswers = noAnswers;
+    }
+
+    public Question() {
+        this.question = question;
+        this.NoAnswers = 0;
+        this.AnswerA = "";
+        this.AnswerB = "";
+        this.AnswerC = "";
+        this.AnswerD = "";
+        this.AnswerE = "";
     }
 
     public Question(String question, String noAnswers) {
         this.question = question;
-        NoAnswers = 7;
+        this.NoAnswers = 7;
     }
 
     public Question(String question, int noAnswers, String answerA, String answerB, String answerC, String answerD, String answerE) {
         this.question = question;
-        NoAnswers = noAnswers;
-        AnswerA = answerA;
-        AnswerB = answerB;
-        AnswerC = answerC;
-        AnswerD = answerD;
-        AnswerE = answerE;
+        this.NoAnswers = noAnswers;
+        this.AnswerA = answerA;
+        this.AnswerB = answerB;
+        this.AnswerC = answerC;
+        this.AnswerD = answerD;
+        this.AnswerE = answerE;
     }
 
     @Override
