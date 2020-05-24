@@ -25,7 +25,6 @@ const AppWrapper = () => {
             </Route>
             <Route exact path="/statistics">
               <Stats />
-              <Stats />
             </Route>
           </Switch>
         </Container>
