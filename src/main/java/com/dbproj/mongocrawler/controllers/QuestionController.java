@@ -33,6 +33,22 @@ public class QuestionController {
         return ResponseEntity.ok(saved);
     }
 
+    @PutMapping(path = "/", produces = "application/json", consumes = "application/json")
+    public ResponseEntity<Question> editQuestion(
+            @RequestBody String id, String letter
+    ) {
+        System.out.println("???????????           ???????????");
+        Question questionToEdit = questions.findById(id).orElse(null);
+      //  questions.deleteById(questionToEdit.id);
+        Question saved = null;
+        if(questionToEdit!=null) {
+            questionToEdit.answer(letter);
+            saved = questions.save(questionToEdit);
+        }
+        return ResponseEntity.ok(saved);
+    }
+
+
     @DeleteMapping(path = "/", produces = "application/json")
     public ResponseEntity<String> deleteQuestion(
             @RequestParam String id

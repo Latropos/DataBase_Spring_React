@@ -37,4 +37,14 @@ const deleteAction = async (url, id) => {
   console.log(fetchRes);
 };
 
-export { get, post, deleteAction };
+const editAction = async (url, id, letter) => {
+  let urlParams = new URLSearchParams();
+  urlParams.append("id", id);
+  urlParams.append("letter", letter);
+  const baseUrl = `${url}?${urlParams.toString()}`;
+  console.log(`[PUT] ${baseUrl}`);
+  var fetchRes = await fetch(baseUrl, { method: "PUT" });
+  console.log(fetchRes);
+};
+
+export { get, post, deleteAction, editAction };

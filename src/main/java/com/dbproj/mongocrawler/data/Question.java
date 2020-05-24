@@ -29,6 +29,7 @@ public class Question {
         this.dCount=100;
         this.eCount=9;
     }
+
     public void answersInit(){
         this.answerA = "";
         this.answerB = "";
@@ -37,8 +38,29 @@ public class Question {
         this.answerE = "";
     }
 
+    public void answer(String letter){
+        System.out.println("!!!!!!!!!!         !!!!!!!!!!");
+        if(letter.equals("a")) {
+            this.aCount++;
+            System.out.println("!!!!!!!!!!         !!!!!!!!!!"+this.aCount);
+        }
+        if(letter.equals("b")) this.bCount++;
+        if(letter.equals("c")) this.cCount++;
+        if(letter.equals("d")) this.dCount++;
+        if(letter.equals("e")) this.eCount++;
+    }
+
+    public int plusAnswer(String answer){
+        if(answer.length()>0) return 1;
+        return 0;
+    }
+
     public void countAnswers(){
-        this.noAnswers=this.aCount+this.bCount+this.cCount+this.dCount+this.eCount;
+        this.noAnswers=plusAnswer(this.answerA);
+        this.noAnswers+=plusAnswer(this.answerB);
+        this.noAnswers+=plusAnswer(this.answerC);
+        this.noAnswers+=plusAnswer(this.answerD);
+        this.noAnswers+=plusAnswer(this.answerE);
     }
 
     public Question() {
