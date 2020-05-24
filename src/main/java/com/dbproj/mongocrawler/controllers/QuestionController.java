@@ -16,7 +16,7 @@ public class QuestionController {
     private QuestionRepository questions;
 
     @GetMapping(path = "/", produces = "application/json")
-    public ResponseEntity<List<Question>> findAllCustomers(
+    public ResponseEntity<List<Question>> findAllQuestions(
             @RequestParam(required = false) String questionText
     ) {
         if (!Strings.isBlank(questionText)) {
@@ -26,7 +26,7 @@ public class QuestionController {
     }
 
     @PostMapping(path = "/", produces = "application/json", consumes = "application/json")
-    public ResponseEntity<Question> createCustomer(
+    public ResponseEntity<Question> createQuestion(
             @RequestBody Question customerToCreate
     ) {
         Question saved = questions.save(customerToCreate);
@@ -34,7 +34,7 @@ public class QuestionController {
     }
 
     @DeleteMapping(path = "/", produces = "application/json")
-    public ResponseEntity<String> deleteCustomer(
+    public ResponseEntity<String> deleteQuestion(
             @RequestParam String id
     ) {
         questions.deleteById(id);

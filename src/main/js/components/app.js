@@ -33,11 +33,11 @@ const App = () => {
     setResults(jsonBody);
   };
 
-  const addPerson = async (questionText, lastName, answerA, answerB, answerC, answerD, answerE) => {
+  const addPerson = async (questionText, noAnswers, answerA, answerB, answerC, answerD, answerE) => {
     setLoading(true);
     const respose = await post("/api/questions/", {
       questionText,
-      lastName,
+      noAnswers,
       answerA, answerB, answerC, answerD, answerE,
     });
     console.log(respose);
@@ -71,20 +71,68 @@ const App = () => {
               <Table.HeaderCell>Answer E</Table.HeaderCell>
             </Table.Row>
             {results.map((r) => (
-              <Table.Row key={r.id}>
-                <Table.Cell>{r.questionText}</Table.Cell>
-                <Table.Cell>{r.answerA}</Table.Cell>
-                <Table.Cell>{r.answerB}</Table.Cell>
-                <Table.Cell>{r.answerC}</Table.Cell>
-                <Table.Cell>{r.answerD}</Table.Cell>
-                <Table.Cell>{r.answerE}</Table.Cell>
-                <Table.Cell>
-                  <Button color="red" onClick={() => deleteById(r.id)}>
-                    Delete
-                  </Button>
-                </Table.Cell>
-              </Table.Row>
+                <>
+                <Table.Row key={r.id}>
+                  <Table.Cell>{r.questionText}</Table.Cell>
+                  <Table.Cell>{r.answerA}</Table.Cell>
+                  <Table.Cell>{r.answerB}</Table.Cell>
+                  <Table.Cell>{r.answerC}</Table.Cell>
+                  <Table.Cell>{r.answerD}</Table.Cell>
+                  <Table.Cell>{r.answerE}</Table.Cell>
+                  <Table.Cell></Table.Cell>
+                </Table.Row>
+                  <Table.Row>
+                    <Table.Cell></Table.Cell>
+                    <Table.Cell>
+
+                      <Button color="blue" onClick={() => deleteById(r.id)}>
+                        A
+                      </Button>
+                    </Table.Cell>
+                    <Table.Cell>
+                      <Button color="blue" onClick={() => deleteById(r.id)}>
+                        B
+                      </Button>
+                    </Table.Cell>
+                    <Table.Cell>
+                      { r.noAnswers > "2" ?
+
+                          <Button color="blue" onClick={() => deleteById(r.id)}>
+                            C
+                          </Button>
+                          :
+                          <div></div>
+                      }
+                    </Table.Cell>
+                    <Table.Cell>
+                      { r.noAnswers > "3" ?
+
+                          <Button color="blue" onClick={() => deleteById(r.id)}>
+                            D
+                          </Button>
+                          :
+                          <div></div>
+                      }
+                    </Table.Cell>
+                    <Table.Cell>
+                      { r.noAnswers > "4" ?
+
+                          <Button color="blue" onClick={() => deleteById(r.id)}>
+                            E
+                          </Button>
+                          :
+                          <div></div>
+                      }
+                    </Table.Cell>
+                    <Table.Cell>
+                      <Button color="red" onClick={() => deleteById(r.id)}>
+                        Delete
+                      </Button>
+                    </Table.Cell>
+                  </Table.Row>
+                </>
             ))}
+
           </Table.Header>
         </Table>
       </>
