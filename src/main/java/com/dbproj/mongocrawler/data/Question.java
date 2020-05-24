@@ -10,11 +10,11 @@ public class Question {
     public String question;
     public int noAnswers;
 
-    public String AnswerA;
-    public String AnswerB;
-    public String AnswerC;
-    public String AnswerD;
-    public String AnswerE;
+    public String answerA;
+    public String answerB;
+    public String answerC;
+    public String answerD;
+    public String answerE;
 
     public int aCount;
     public int bCount;
@@ -29,45 +29,59 @@ public class Question {
         this.dCount=100;
         this.eCount=9;
     }
-    public Question(String question, int noAnswers) {
-        this.question = question;
-        this.noAnswers = noAnswers;
-        this.zeroCount();
-        this.countAnswers();
-    }
-
-
-    public Question() {
-        this.question = question;
-        this.noAnswers = 0;
-        this.AnswerA = "";
-        this.AnswerB = "";
-        this.AnswerC = "";
-        this.AnswerD = "";
-        this.AnswerE = "";
-        this.zeroCount();
-        this.countAnswers();
-    }
-
-    public Question(String question, String noAnswers) {
-        this.question = question;
-        this.noAnswers = 5;
-        this.zeroCount();
-        this.countAnswers();
+    public void answersInit(){
+        this.answerA = "";
+        this.answerB = "";
+        this.answerC = "";
+        this.answerD = "";
+        this.answerE = "";
     }
 
     public void countAnswers(){
         this.noAnswers=this.aCount+this.bCount+this.cCount+this.dCount+this.eCount;
     }
 
+    public Question() {
+    }
+
     public Question(String question, int noAnswers, String answerA, String answerB, String answerC, String answerD, String answerE) {
         this.question = question;
         this.noAnswers = noAnswers;
-        this.AnswerA = answerA;
-        this.AnswerB = answerB;
-        this.AnswerC = answerC;
-        this.AnswerD = answerD;
-        this.AnswerE = answerE;
+        this.answerA = answerA;
+        this.answerB = answerB;
+        this.answerC = answerC;
+        this.answerD = answerD;
+        this.answerE = answerE;
+        this.zeroCount();
+        this.countAnswers();
+    }
+    public Question(String question, int noAnswers, String answerA, String answerB, String answerC, String answerD) {
+        this.question = question;
+        this.noAnswers = noAnswers;
+        this.answersInit();
+        this.answerA = answerA;
+        this.answerB = answerB;
+        this.answerC = answerC;
+        this.answerD = answerD;
+        this.zeroCount();
+        this.countAnswers();
+    }
+    public Question(String question, int noAnswers, String answerA, String answerB, String answerC) {
+        this.question = question;
+        this.noAnswers = noAnswers;
+        this.answersInit();
+        this.answerA = answerA;
+        this.answerB = answerB;
+        this.answerC = answerC;
+        this.zeroCount();
+        this.countAnswers();
+    }
+    public Question(String question, int noAnswers, String answerA, String answerB) {
+        this.question = question;
+        this.noAnswers = noAnswers;
+        this.answersInit();
+        this.answerA = answerA;
+        this.answerB = answerB;
         this.zeroCount();
         this.countAnswers();
     }
@@ -76,12 +90,12 @@ public class Question {
         return "Question{" +
                 "id='" + id + '\'' +
                 ", question='" + question + '\'' +
-                ", noAnswers=" + noAnswers +
-                ", AnswerA='" + AnswerA + '\'' +
-                ", AnswerB='" + AnswerB + '\'' +
-                ", AnswerC='" + AnswerC + '\'' +
-                ", AnswerD='" + AnswerD + '\'' +
-                ", AnswerE='" + AnswerE + '\'' +
+                ", noAnswers='" + noAnswers + '\'' +
+                ", answerA='" + answerA + '\'' +
+                ", answerB='" + answerB + '\'' +
+                ", answerC='" + answerC + '\'' +
+                ", answerD='" + answerD + '\'' +
+                ", answerE='" + answerE + '\'' +
                 '}';
     }
 }

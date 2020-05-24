@@ -40,16 +40,14 @@ let renderLabel = function(entry) {
 
 const Stats = () => {
   const [loading, setLoading] = useState(false);
-  console.log("STARTSTARTSATRTSATRT!!!");
   const [results, setResults] = useState([]);
   const getData = async () => {
     setLoading(true);
     let baseUrl = "/api/questions/";
     const jsonBody = await get(baseUrl, null);
-    //setResults(jsonBody);
     let result = [
       {
-        name: "AA",
+        name: "A",
         value: jsonBody[0].aCount,
       },
       {
@@ -116,58 +114,4 @@ const Stats = () => {
   );
 };
 
-
 export default Stats;
- /*
- import React, {useState} from "react";
-import { PieChart, Pie } from "recharts";
-import {Segment, Header, Table, Button} from "semantic-ui-react";
-
-const [query, setQuery] = useState("");
-const [results, setResults] = useState([]);
-
-const mapResultsToData = () => {
-    //results.map((r) => (
-        data01[0].value=results.aCount;
-        data01[1].value=results.bCount;
-        data01[2].value=results.cCount;
-        data01[3].value=results.dCount;
-        data01[4].value=results.eCount;
-    //    );
-};
-
-
-let renderLabel = function(entry) {
-  return entry.name;
-}
-};
-
-
-export default Stats;
-
- * */
-
-/*
-*
-let data01 = [
-  {
-    name: "A",
-    value: 100,
-  },
-  {
-    name: "B",
-    value: 100,
-  },
-  {
-    name: "C",
-    value: 100,
-  },
-  {
-    name: "D",
-    value: 100,
-  },
-  {
-    name: "E",
-    value: 100,
-  },
-];*/

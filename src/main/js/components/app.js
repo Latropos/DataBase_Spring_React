@@ -33,11 +33,13 @@ const App = () => {
     setResults(jsonBody);
   };
 
-  const addQuestion = async (question, noAnswers) => {
+  const addQuestion = async (question, noAnswers, answerA, answerB, answerC, answerD, answerE) => {
+    console.log("addQ");
     setLoading(true);
     const respose = await post("/api/questions/", {
       question,
       noAnswers,
+      answerA, answerB, answerC, answerD, answerE,
     });
     console.log(respose);
     setLoading(false);
@@ -63,20 +65,26 @@ const App = () => {
         <Table celled>
           <Table.Header>
             <Table.Row>
-              <Table.HeaderCell>ID</Table.HeaderCell>
-              <Table.HeaderCell>Question</Table.HeaderCell>
-              <Table.HeaderCell>Number of answers</Table.HeaderCell>
+                <Table.HeaderCell>Question</Table.HeaderCell>
+                <Table.HeaderCell>Answer A</Table.HeaderCell>
+                <Table.HeaderCell>Answer B</Table.HeaderCell>
+                <Table.HeaderCell>Answer C</Table.HeaderCell>
+                <Table.HeaderCell>Answer D</Table.HeaderCell>
+                <Table.HeaderCell>Answer E</Table.HeaderCell>
             </Table.Row>
             {results.map((r) => (
               <Table.Row key={r.id}>
-                <Table.Cell>{r.id}</Table.Cell>
-                <Table.Cell>{r.question}</Table.Cell>
-                <Table.Cell>{r.noAnswers}</Table.Cell>
-                <Table.Cell>
-                  <Button color="red" onClick={() => deleteById(r.id)}>
-                    Delete
-                  </Button>
-                </Table.Cell>
+                  <Table.Cell>{r.question}</Table.Cell>
+                  <Table.Cell>{r.answerA}</Table.Cell>
+                  <Table.Cell>{r.answerB}</Table.Cell>
+                  <Table.Cell>{r.answerC}</Table.Cell>
+                  <Table.Cell>{r.answerD}</Table.Cell>
+                  <Table.Cell>{r.answerE}</Table.Cell>
+                  <Table.Cell>
+                      <Button color="red" onClick={() => deleteById(r.id)}>
+                          Delete
+                      </Button>
+                  </Table.Cell>
               </Table.Row>
             ))}
           </Table.Header>

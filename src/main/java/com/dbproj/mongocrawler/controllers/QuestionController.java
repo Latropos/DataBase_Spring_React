@@ -20,7 +20,7 @@ public class QuestionController {
             @RequestParam(required = false) String question
     ) {
         if (!Strings.isBlank(question)) {
-            return ResponseEntity.ok(questions.findByQuestion(question));
+            return ResponseEntity.ok(questions.findByQuestionContainingIgnoreCase(question));
         }
         return ResponseEntity.ok(questions.findAll());
     }
