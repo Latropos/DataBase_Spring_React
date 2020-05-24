@@ -23,11 +23,13 @@ public class MongoDataLoader implements CommandLineRunner {
         repository.deleteAll();
 
         // save a couple of customers
-        repository.save(new Customer("Alice", "Smith"));
-        repository.save(new Customer("Bob", "Smith"));
+        repository.save(new Customer("Alice", "Smith", "A", "B", "C", "C", "T"));
+        // repository.save(new Customer("Bob", "smith"));
+
 
 
         // fetch all customers
+
         System.out.println("Customers found with findAll():");
         System.out.println("-------------------------------");
         for (Customer customer : repository.findAll()) {

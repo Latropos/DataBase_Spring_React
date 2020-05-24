@@ -19,7 +19,7 @@ const App = () => {
 
   const submitForm = async () => {
     console.log(query);
-    let baseUrl = "/api/questions/";
+    let baseUrl = "/api/customers/";
     setLoading(true);
     let params;
     if (query) {
@@ -33,11 +33,12 @@ const App = () => {
     setResults(jsonBody);
   };
 
-  const addPerson = async (firstName, lastName) => {
+  const addPerson = async (firstName, lastName, answerA, answerB, answerC, answerD, answerE) => {
     setLoading(true);
-    const respose = await post("/api/questions/", {
+    const respose = await post("/api/customers/", {
       firstName,
       lastName,
+      answerA, answerB, answerC, answerD, answerE,
     });
     console.log(respose);
     setLoading(false);
@@ -50,7 +51,7 @@ const App = () => {
   const deleteById = async (id) => {
     console.log("deleting ", id);
     setLoading(true);
-    await deleteAction("/api/questions/", id);
+    await deleteAction("/api/customers/", id);
     setResults([]);
     setLoading(false);
   };
@@ -62,15 +63,21 @@ const App = () => {
         <Table celled>
           <Table.Header>
             <Table.Row>
-              <Table.HeaderCell>ID</Table.HeaderCell>
-              <Table.HeaderCell>First name</Table.HeaderCell>
-              <Table.HeaderCell>Last name</Table.HeaderCell>
+              <Table.HeaderCell>Question</Table.HeaderCell>
+              <Table.HeaderCell>Answer A</Table.HeaderCell>
+              <Table.HeaderCell>Answer B</Table.HeaderCell>
+              <Table.HeaderCell>Answer C</Table.HeaderCell>
+              <Table.HeaderCell>Answer D</Table.HeaderCell>
+              <Table.HeaderCell>Answer E</Table.HeaderCell>
             </Table.Row>
             {results.map((r) => (
               <Table.Row key={r.id}>
-                <Table.Cell>{r.id}</Table.Cell>
                 <Table.Cell>{r.firstName}</Table.Cell>
-                <Table.Cell>{r.lastName}</Table.Cell>
+                <Table.Cell>{r.answerA}</Table.Cell>
+                <Table.Cell>{r.answerB}</Table.Cell>
+                <Table.Cell>{r.answerC}</Table.Cell>
+                <Table.Cell>{r.answerD}</Table.Cell>
+                <Table.Cell>{r.answerE}</Table.Cell>
                 <Table.Cell>
                   <Button color="red" onClick={() => deleteById(r.id)}>
                     Delete

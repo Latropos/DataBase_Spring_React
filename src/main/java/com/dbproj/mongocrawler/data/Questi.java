@@ -1,12 +1,17 @@
 package com.dbproj.mongocrawler.data;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-public class Question {
+import java.util.List;
+
+@Document(collection = "Questions")
+public class Questi {
 
     @Id
     public String id;
 
+    public String firstName;
     public String question;
     public int NoAnswers;
 
@@ -16,14 +21,16 @@ public class Question {
     public String AnswerD;
     public String AnswerE;
 
+    private List<String> AnswerList;
+
+    public Questi(String firstName, String noAnswers) {
+        this.firstName = firstName;
+        NoAnswers = 7;
+    }
+/*
     public Question(String question, int noAnswers) {
         this.question = question;
         NoAnswers = noAnswers;
-    }
-
-    public Question(String question, String noAnswers) {
-        this.question = question;
-        NoAnswers = 7;
     }
 
     public Question(String question, int noAnswers, String answerA, String answerB, String answerC, String answerD, String answerE) {
@@ -34,6 +41,18 @@ public class Question {
         AnswerC = answerC;
         AnswerD = answerD;
         AnswerE = answerE;
+    }
+*/
+    public String getId() {
+        return id;
+    }
+
+    public String getQuestion() {
+        return question;
+    }
+
+    public int getNoAnswers() {
+        return NoAnswers;
     }
 
     @Override
