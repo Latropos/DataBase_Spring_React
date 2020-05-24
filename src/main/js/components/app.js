@@ -54,7 +54,6 @@ const App = () => {
     setLoading(true);
     await deleteAction("/api/questions/", id);
     setResults([]);
-    //setQuestions([]);
     setLoading(false);
   };
 
@@ -63,7 +62,6 @@ const App = () => {
     setLoading(true);
     await editAction("/api/questions/", id, letter);
     setResults([]);
-    //setQuestions([]);
     setLoading(false);
   }
 
@@ -85,11 +83,11 @@ const App = () => {
                   <>
                     <Table.Row key={r.id}>
                       <Table.Cell>{r.question}</Table.Cell>
-                      <Table.Cell>[{r.aCount}]{r.answerA}</Table.Cell>
-                      <Table.Cell>[{r.bCount}]{r.answerB}</Table.Cell>
-                      <Table.Cell>[{r.cCount}]{r.answerC}</Table.Cell>
-                      <Table.Cell>[{r.dCount}]{r.answerD}</Table.Cell>
-                      <Table.Cell>[{r.eCount}]{r.answerE}</Table.Cell>
+                      <Table.Cell>{r.answerA}</Table.Cell>
+                      <Table.Cell>{r.answerB}</Table.Cell>
+                      <Table.Cell>{r.answerC}</Table.Cell>
+                      <Table.Cell>{r.answerD}</Table.Cell>
+                      <Table.Cell>{r.answerE}</Table.Cell>
                       <Table.Cell></Table.Cell>
                     </Table.Row>
                     <Table.Row>
@@ -97,19 +95,19 @@ const App = () => {
                       <Table.Cell>
 
                         <Button color="blue" onClick={() => incrementAnswer(r.id, "a")}>
-                          A
+                          A [{r.aCount}]
                         </Button>
                       </Table.Cell>
                       <Table.Cell>
                         <Button color="blue" onClick={() => incrementAnswer(r.id, "b")}>
-                          B
+                          B [{r.bCount}]
                         </Button>
                       </Table.Cell>
                       <Table.Cell>
                         { r.noAnswers > 2 ?
 
                             <Button color="blue" onClick={() => incrementAnswer(r.id, "c")}>
-                              C
+                              C [{r.cCount}]
                             </Button>
                             :
                             <div></div>
@@ -119,7 +117,7 @@ const App = () => {
                         { r.noAnswers > 3 ?
 
                             <Button color="blue" onClick={() => incrementAnswer(r.id, "d")}>
-                              D
+                              D [{r.dCount}]
                             </Button>
                             :
                             <div></div>
@@ -129,7 +127,7 @@ const App = () => {
                         { r.noAnswers > 4 ?
 
                             <Button color="blue" onClick={() => incrementAnswer(r.id, "e")}>
-                              E
+                              E [{r.eCount}]
                             </Button>
                             :
                             <div></div>

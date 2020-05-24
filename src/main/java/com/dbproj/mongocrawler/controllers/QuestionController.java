@@ -34,12 +34,11 @@ public class QuestionController {
     }
 
     @PutMapping(path = "/", produces = "application/json", consumes = "application/json")
-    public ResponseEntity<Question> editQuestion(
-            @RequestBody String id, String letter
+    public ResponseEntity<Question> updateQuestion(
+            @RequestParam("id") String id , @RequestParam("letter") String letter
     ) {
         System.out.println("???????????           ???????????");
         Question questionToEdit = questions.findById(id).orElse(null);
-      //  questions.deleteById(questionToEdit.id);
         Question saved = null;
         if(questionToEdit!=null) {
             questionToEdit.answer(letter);
@@ -47,7 +46,18 @@ public class QuestionController {
         }
         return ResponseEntity.ok(saved);
     }
-
+    @PutMapping(path = "/", produces = "application/json")
+    public ResponseEntity<Question> updateQuestion2(
+            @RequestParam("id") String id , @RequestParam("letter") String letter
+    ) {
+        Question questionToEdit = questions.findById(id).orElse(null);
+        Question saved = null;
+        if(questionToEdit!=null) {
+            questionToEdit.answer(letter);
+            saved = questions.save(questionToEdit);
+        }
+        return ResponseEntity.ok(saved);
+    }
 
     @DeleteMapping(path = "/", produces = "application/json")
     public ResponseEntity<String> deleteQuestion(
@@ -58,50 +68,3 @@ public class QuestionController {
     }
 
 }
-
-/*package com.dbproj.mongocrawler.controllers;
-
-
-import com.dbproj.mongocrawler.data.Customer;
-import com.dbproj.mongocrawler.data.CustomerRepository;
-import org.apache.logging.log4j.util.Strings;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
-
-@RestController
-@RequestMapping(path = "/api/questions")
-public class QuestionController {
-
-    @Autowired
-    private CustomerRepository customers;
-
-    @GetMapping(path = "/", produces = "application/json")
-    public ResponseEntity<List<Customer>> findAllCustomers(
-            @RequestParam(required = false) String firstName
-    ) {
-        if (!Strings.isBlank(firstName)) {
-            return ResponseEntity.ok(customers.findByFirstNameContainingIgnoreCase(firstName));
-        }
-        return ResponseEntity.ok(customers.findAll());
-    }
-
-    @PostMapping(path = "/", produces = "application/json", consumes = "application/json")
-    public ResponseEntity<Customer> createCustomer(
-            @RequestBody Customer customerToCreate
-    ) {
-        Customer saved = customers.save(customerToCreate);
-        return ResponseEntity.ok(saved);
-    }
-
-    @DeleteMapping(path = "/", produces = "application/json")
-    public ResponseEntity<String> deleteCustomer(
-            @RequestParam String id
-    ) {
-        customers.deleteById(id);
-        return ResponseEntity.ok("Success");
-    }
-
-}*/

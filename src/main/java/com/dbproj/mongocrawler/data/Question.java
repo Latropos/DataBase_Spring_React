@@ -1,6 +1,7 @@
 package com.dbproj.mongocrawler.data;
 
 import org.springframework.data.annotation.Id;
+import java.util.Random;
 
 public class Question {
 
@@ -23,11 +24,12 @@ public class Question {
     public int eCount;
 
     public void zeroCount(){
-        this.aCount=57;
-        this.bCount=30;
-        this.cCount=2;
-        this.dCount=100;
-        this.eCount=9;
+        Random random = new Random();
+        this.aCount=random.nextInt(100);
+        this.bCount=random.nextInt(100);
+        this.cCount=random.nextInt(100);
+        this.dCount=random.nextInt(100);
+        this.eCount=random.nextInt(100);
     }
 
     public void answersInit(){
@@ -39,11 +41,7 @@ public class Question {
     }
 
     public void answer(String letter){
-        System.out.println("!!!!!!!!!!         !!!!!!!!!!");
-        if(letter.equals("a")) {
-            this.aCount++;
-            System.out.println("!!!!!!!!!!         !!!!!!!!!!"+this.aCount);
-        }
+        if(letter.equals("a")) this.aCount++;
         if(letter.equals("b")) this.bCount++;
         if(letter.equals("c")) this.cCount++;
         if(letter.equals("d")) this.dCount++;
