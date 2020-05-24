@@ -23,7 +23,7 @@ public class MongoDataLoader implements CommandLineRunner {
         repository.deleteAll();
 
         // save a couple of customers
-        repository.save(new Question("Alice", "Smith", "A", "B", "C", "C", "T"));
+        repository.save(new Question("What is your favorite answer", "Smith", "A", "B", "C", "D", "E"));
         // repository.save(new Customer("Bob", "smith"));
 
 
