@@ -12,20 +12,11 @@ public class Customer {
     public String firstName;
     public String lastName;
 
-    public String answerA = "Init A";
+    public String answerA;
     public String answerB;
     public String answerC;
     public String answerD;
     public String answerE;
-
-
-
-  /*  public Customer(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
-*/
-
 
     public Customer(String firstName, String lastName, String answerA, String answerB, String answerC, String answerD, String answerE) {
         this.firstName = firstName;

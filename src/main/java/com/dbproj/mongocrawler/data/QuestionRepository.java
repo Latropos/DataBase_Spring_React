@@ -4,8 +4,6 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.List;
 
-public interface QuestionRepository extends MongoRepository<Questi, String> {
-
-    public List<Questi> findByQuestionContainingIgnoreCase(String question);
-
+public interface QuestionRepository extends MongoRepository<Question, String> {
+    public List<Question> findByQuestionTextContainingIgnoreCase(String firstName);
 }

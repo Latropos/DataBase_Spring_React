@@ -1,7 +1,7 @@
 package com.dbproj.mongocrawler.dataloader;
 
-import com.dbproj.mongocrawler.data.Customer;
-import com.dbproj.mongocrawler.data.CustomerRepository;
+import com.dbproj.mongocrawler.data.Question;
+import com.dbproj.mongocrawler.data.QuestionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 public class MongoDataLoader implements CommandLineRunner {
 
     @Autowired
-    private CustomerRepository repository;
+    private QuestionRepository repository;
 
     /**
      * Seed data into the database
@@ -23,7 +23,7 @@ public class MongoDataLoader implements CommandLineRunner {
         repository.deleteAll();
 
         // save a couple of customers
-        repository.save(new Customer("Alice", "Smith", "A", "B", "C", "C", "T"));
+        repository.save(new Question("Alice", "Smith", "A", "B", "C", "C", "T"));
         // repository.save(new Customer("Bob", "smith"));
 
 
@@ -32,7 +32,7 @@ public class MongoDataLoader implements CommandLineRunner {
 
         System.out.println("Customers found with findAll():");
         System.out.println("-------------------------------");
-        for (Customer customer : repository.findAll()) {
+        for (Question customer : repository.findAll()) {
             System.out.println(customer);
         }
         System.out.println();
@@ -40,12 +40,14 @@ public class MongoDataLoader implements CommandLineRunner {
         // fetch an individual customer
         System.out.println("Customer found with findByFirstName('Alice'):");
         System.out.println("--------------------------------");
-        System.out.println(repository.findByFirstNameContainingIgnoreCase("Alice"));
-
+        System.out.println(repository.findByQuestionTextContainingIgnoreCase("Alice"));
+/*
         System.out.println("Customers found with findByLastName('Smith'):");
         System.out.println("--------------------------------");
         for (Customer customer : repository.findByLastName("Smith")) {
             System.out.println(customer);
         }
+
+ */
     }
 }
