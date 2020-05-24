@@ -10,7 +10,7 @@ const successMessage = (
 
 const QuestionForm = ({ onSubmit }) => {
   const [question, setQuestion] = useState("");
-  const [noAnswers, setNoAnswers] = useState(2);
+  const [noAnswers, setNoAnswers] = useState("2");
 
   const [answerA, setAnswerA] = useState("");
   const [answerB, setAnswerB] = useState("");
@@ -21,11 +21,11 @@ const QuestionForm = ({ onSubmit }) => {
 
   const [showSuccess, setShowSuccess] = useState(false);
 
-  const submitQuestion = async () => {
+  const submitPerson = async () => {
     if (question && noAnswers) {
       await onSubmit(question, noAnswers, answerA, answerB, answerC, answerD, answerE);
       setQuestion("");
-      setNoAnswers(2);
+      setNoAnswers("");
 
       setAnswerA("");
       setAnswerB("");
@@ -48,6 +48,7 @@ const QuestionForm = ({ onSubmit }) => {
     setNoAnswers(e.target.value);
   };
 
+
   const handleAnswerAChange = (e) => {
     setAnswerA(e.target.value);
   }
@@ -67,7 +68,7 @@ const QuestionForm = ({ onSubmit }) => {
   return (
     <Segment color="blue">
       {showSuccess && successMessage}
-      <Form onSubmit={submitQuestion}>
+      <Form onSubmit={submitPerson}>
         <p>Add a question</p>
         <Label>Question</Label>
         <Form.Input
@@ -77,16 +78,17 @@ const QuestionForm = ({ onSubmit }) => {
         />
         <Label>Number of answers:</Label>
         <select value={noAnswers} onChange={handleNoAnswersChange}>
-          <option value={2}>2</option>
-          <option value={3}>3</option>
-          <option value={4}>4</option>
-          <option value={5}>5</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
         </select>
-        <Label /><Form.Input
-          placeholder="Answer A"
-          value={answerA}
-          onChange={handleAnswerAChange}
-      />
+        <Label />
+        <Form.Input
+            placeholder="Answer A"
+            value={answerA}
+            onChange={handleAnswerAChange}
+        />
         <Form.Input
             placeholder="Answer B"
             value={answerB}
