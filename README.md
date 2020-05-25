@@ -3,11 +3,15 @@
 MongoDB CRUD app with Spring Boot and ReactJS front-end
 
 ![You can add qouestion](/dodawanie_pytan.jpg)
-You can add qouestion
+You can add question
+
+
 
 
 ![You can search for qouestion](/wyszukiwanie_pytan.jpg)
 You can search for qouestion
+
+
 
 
 ![You can see the statistics](/statystyki.jpg)
