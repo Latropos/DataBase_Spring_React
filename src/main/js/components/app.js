@@ -94,19 +94,18 @@ const App = () => {
                       <Table.Cell></Table.Cell>
                       <Table.Cell>
 
-                        <Button color="blue" onClick={() => incrementAnswer(r.id, "a")}>
+                        <Button color="red" onClick={() => incrementAnswer(r.id, "a")}>
                           A [{r.aCount}]
                         </Button>
                       </Table.Cell>
                       <Table.Cell>
-                        <Button color="blue" onClick={() => incrementAnswer(r.id, "b")}>
+                        <Button color="orange" onClick={() => incrementAnswer(r.id, "b")}>
                           B [{r.bCount}]
                         </Button>
                       </Table.Cell>
                       <Table.Cell>
                         { r.noAnswers > 2 ?
-
-                            <Button color="blue" onClick={() => incrementAnswer(r.id, "c")}>
+                            <Button color="yellow" onClick={() => incrementAnswer(r.id, "c")}>
                               C [{r.cCount}]
                             </Button>
                             :
@@ -115,8 +114,7 @@ const App = () => {
                       </Table.Cell>
                       <Table.Cell>
                         { r.noAnswers > 3 ?
-
-                            <Button color="blue" onClick={() => incrementAnswer(r.id, "d")}>
+                            <Button color="green" onClick={() => incrementAnswer(r.id, "d")}>
                               D [{r.dCount}]
                             </Button>
                             :
@@ -125,7 +123,6 @@ const App = () => {
                       </Table.Cell>
                       <Table.Cell>
                         { r.noAnswers > 4 ?
-
                             <Button color="blue" onClick={() => incrementAnswer(r.id, "e")}>
                               E [{r.eCount}]
                             </Button>
@@ -157,10 +154,20 @@ const App = () => {
         <Form onSubmit={submitForm}>
           <p>Search for question</p>
           <Form.Input
-            placeholder="Search..."
-            value={query}
-            onChange={handleInputChange}
+              placeholder="Search..."
+              value={query}
+              onChange={handleInputChange}
           />
+          <select value={query} onChange={handleInputChange}>
+            <option value="How">How ...</option>
+            <option value="What">What ...</option>
+            <option value="What is your favourite">What s your favourite ...</option>
+            <option value="Where">Where ...</option>
+            <option value="When">When ...</option>
+          </select>
+        </Form>
+        <Form onSubmit={submitForm}>
+
         </Form>
       </Segment>
       <Segment>

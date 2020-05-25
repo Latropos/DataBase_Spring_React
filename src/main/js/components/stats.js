@@ -11,28 +11,6 @@ import {
   Header,
 } from "semantic-ui-react";
 import {get} from "../apiService";
-var data01 = [
-  {
-    name: "AA",
-    value: 100,
-  },
-  {
-    name: "B",
-    value: 100,
-  },
-  {
-    name: "C",
-    value: 100,
-  },
-  {
-    name: "D",
-    value: 100,
-  },
-  {
-    name: "E",
-    value: 100,
-  },
-];
 
 let renderLabel = function(entry) {
   return entry.name;
@@ -41,6 +19,9 @@ let renderLabel = function(entry) {
 const Stats = () => {
   const [loading, setLoading] = useState(false);
   const [results, setResults] = useState([]);
+  const [query, setQuery] = useState(0);
+
+
   const getData = async () => {
     setLoading(true);
     let baseUrl = "/api/questions/";
@@ -48,37 +29,55 @@ const Stats = () => {
     let result = [
       {
         name: "A",
-        value: jsonBody[0].aCount,
+        value: jsonBody[query].aCount,
       },
       {
         name: "B",
-        value: jsonBody[0].bCount,
+        value: jsonBody[query].bCount,
       },
       {
         name: "C",
-        value: jsonBody[0].cCount,
+        value: jsonBody[query].cCount,
       },
       {
         name: "D",
-        value: jsonBody[0].dCount,
+        value: jsonBody[query].dCount,
       },
       {
         name: "E",
-        value: jsonBody[0].eCount,
+        value: jsonBody[query].eCount,
       },
     ];
+
     setResults(result);
     setLoading(false);
   }
   const getStat = () => {
     return
   }
+  const handleInputChange = (e) => {
+    setQuery(e.target.value);
+  };
+  const submitQuery = async () => {
+    if (query) {
+      setQuery(0);
+    }
+  };
+
   console.info(results);
   return (
       <Container>
         <Segment>
           <Header as="h3">Statistics</Header>
           <hr />
+          <Form onSubmit={submitQuery}>
+            <Form.Input
+                placeholder="Search..."
+                value={query}
+                onChange={handleInputChange}
+            />
+          </Form>
+
           <Button color="blue" onClick={() => getData()}>
             Get statistics
           </Button>

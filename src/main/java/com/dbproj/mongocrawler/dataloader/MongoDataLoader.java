@@ -24,8 +24,8 @@ public class MongoDataLoader implements CommandLineRunner {
 
         // save a couple of questions
         repository.save(new Question("To be or not to be?", 2, "To be!", "Not to be."));
-        repository.save(new Question("Hello?", 2, "Hi", "Pa-pa"));
-        repository.save(new Question("Hello to everyony?!", 3, "Hi", "Pa-pa", "Goodbye to everyone...."));
+        repository.save(new Question("What is your favourite answer?", 5, "A", "B","C", "D", "E"));
+        repository.save(new Question("What is your favourite emoji?", 5, "(-:", ":-)", "<3", ":-P", ":-O"));
 
 
         // fetch all questions
