@@ -2,6 +2,12 @@
 
 MongoDB CRUD app with Spring Boot and ReactJS front-end
 
+![You can add qouestion](/dodawanie_pytan.jpg)
+
+![You can search for qouestion](/wyszukiwanie_pytan.jpg)
+
+![You can see the statistics](/statystyki.jpg)
+
 #### Building the frontend continuously
 
 In the main folder run:
