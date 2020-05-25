@@ -131,7 +131,7 @@ const App = () => {
                         }
                       </Table.Cell>
                       <Table.Cell>
-                        <Button color="red" onClick={() => deleteById(r.id)}>
+                        <Button color="black" onClick={() => deleteById(r.id)}>
                           Delete
                         </Button>
                       </Table.Cell>

@@ -24,6 +24,14 @@ public class MongoDataLoader implements CommandLineRunner {
 
         // save a couple of questions
         repository.save(new Question("To be or not to be?", 2, "To be!", "Not to be."));
+        repository.save(new Question("What is your name?", 2, "Dave", "Not Dave"));
+        repository.save(new Question("How are you?", 3, "Fine", "Fine", "Fine"));
+        repository.save(new Question("How do we sleep while our beds are burning?", 2, "How can we dance when our earth is turning?", "How can we dance when our earth is turning?"));
+        repository.save(new Question("Where did You Sleep Last Night'?", 3, "In the pines, in the pines", "Where the sun don't ever shine", "Where the cold wind blows"));
+        repository.save(new Question("Hello, I love you\n" +
+                "Won't you tell me your name?", 5, "Anabelle", "Mary", "Beatrice", "Georgia", "Stefan"));
+        repository.save(new Question("Ile było dni?", 3, "Do utraty sił", "Do utaty tchu", "Tyle było dni"));
+
         repository.save(new Question("What is your favourite answer?", 5, "A", "B","C", "D", "E"));
         repository.save(new Question("What is your favourite emoji?", 5, "(-:", ":-)", "<3", ":-P", ":-O"));
 
