@@ -9,7 +9,8 @@ You can add question
 
 
 ![You can search for qouestion](/wyszukiwanie_pytan.jpg)
-You can search for qouestion
+You can search for question
+You can answer the question
 
 
 
