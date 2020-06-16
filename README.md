@@ -1,5 +1,7 @@
 ## Mongodb + React + Spring Boot
 
+System do ankietyzacji
+
 MongoDB CRUD app with Spring Boot and ReactJS front-end
 
 ![You can add qouestion](/dodawanie_pytan.jpg)
@@ -57,4 +59,7 @@ docker run -it -p 27017:27017 --name mongo mongo
 sudo systemctl start docker
 docker run -it -p 27017:27017 mongo
 ```
+
+Aleksandra Cynk
+Olens Obertynska
 
