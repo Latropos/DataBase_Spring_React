@@ -12,26 +12,25 @@ Użytkownik ma możliwość wybierania liczby możliwych zamkniętych odpowiedzi
 Można również wyszukiwać interesujące pytanie, wystarczy wpisać fragment jego treści.
 System generuje również wykresy pokazujące zebrane dane w ciekawy sposób.
 
-## Print Screens
-## Zrzuty ekranu
+## Screenshots / Zrzuty ekranu
 
+Adding questions - just fill up the form.
+Dodawanie pytań - po prostu wypełnij formularz.
 ![You can add qouestion](/dodawanie_pytan.jpg)
-You can add question
 
-
-
-
+Filtering questions - type some part of content of questions that interest you - you will see all the results.
+You can also choose for your query a phrase fromt the list.
+Filtrowanie pytań - napisz fragment treści pytań, które Cię interesują - zobaczysz wszystkie wyniki.
+Możesz również wybrać do swojego zapytania wyrażenie z listy.
 ![You can search for qouestion](/wyszukiwanie_pytan.jpg)
-You can search for question
-You can answer the question
 
-
-
-
+Displaying the statistics -  type some part of content of the question that interest you - you will see 
+the most accurate result/
+Wyświetlanie statystyk - napisz fragment treści pytania, które Cię interesuje - zobaczysz najtrafniejszy
+wynki.
 ![You can see the statistics](/statystyki.jpg)
-You can see the statistics
 
-
+### How to run the app / Jak uruchomić aplikację
 
 #### Building the frontend continuously
 
@@ -71,10 +70,9 @@ sudo systemctl start docker
 docker run -it -p 27017:27017 mongo
 ```
 
-
+###Technologies / Technologie
 
 ## Mongodb + React + Spring Boot
-
 MongoDB CRUD app with Spring Boot and ReactJS front-end
 
 Aleksandra Cynk
