@@ -1,19 +1,19 @@
-##Survey platform - system anketerski
+# Survey platform - system anketerski
+### description of project
+
 The platofrm allows you to pose a closed question, and answer others questions.
 The user is free to chose the number of possible closed answers.
 You can search for a question that interests you, just type a part of the content of the questions.
 System generates also charts showing the collected data in an interesting way.
 
+### opis projektu
 Strona umożliwia zadawanie zamkniętych pytań i odpowiadanie na cudze pytania.
 Użytkownik ma możliwość wybierania liczby możliwych zamkniętych odpowiedzi.
 Można również wyszukiwać interesujące pytanie, wystarczy wpisać fragment jego treści.
 System generuje również wykresy pokazujące zebrane dane w ciekawy sposób.
 
-
-## Mongodb + React + Spring Boot
-
-
-MongoDB CRUD app with Spring Boot and ReactJS front-end
+## Print Screens
+## Zrzuty ekranu
 
 ![You can add qouestion](/dodawanie_pytan.jpg)
 You can add question
@@ -70,6 +70,12 @@ docker run -it -p 27017:27017 --name mongo mongo
 sudo systemctl start docker
 docker run -it -p 27017:27017 mongo
 ```
+
+
+
+## Mongodb + React + Spring Boot
+
+MongoDB CRUD app with Spring Boot and ReactJS front-end
 
 Aleksandra Cynk
 Olens Obertynska
