@@ -1,4 +1,4 @@
-# Survey platform - system anketerski
+# Survey platform - system ankieterski
 ### description of the project
 
 The platofrm allows you to pose a closed question, and answer others questions.
