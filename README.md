@@ -15,17 +15,20 @@ System generuje również wykresy pokazujące zebrane dane w ciekawy sposób.
 ## Screenshots / Zrzuty ekranu
 
 Adding questions - just fill up the form.
+
 Dodawanie pytań - po prostu wypełnij formularz.
 ![You can add qouestion](/dodawanie_pytan.jpg)
 
 Filtering questions - type some part of content of questions that interest you - you will see all the results.
 You can also choose for your query a phrase fromt the list.
+
 Filtrowanie pytań - napisz fragment treści pytań, które Cię interesują - zobaczysz wszystkie wyniki.
 Możesz również wybrać do swojego zapytania wyrażenie z listy.
 ![You can search for qouestion](/wyszukiwanie_pytan.jpg)
 
 Displaying the statistics -  type some part of content of the question that interest you - you will see 
-the most accurate result/
+the most accurate result.
+
 Wyświetlanie statystyk - napisz fragment treści pytania, które Cię interesuje - zobaczysz najtrafniejszy
 wynki.
 ![You can see the statistics](/statystyki.jpg)
