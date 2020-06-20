@@ -1,5 +1,5 @@
 # Survey platform - system anketerski
-### description of project
+### description of the project
 
 The platofrm allows you to pose a closed question, and answer others questions.
 The user is free to chose the number of possible closed answers.
