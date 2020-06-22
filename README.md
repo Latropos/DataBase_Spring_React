@@ -78,6 +78,12 @@ docker run -it -p 27017:27017 mongo
 ## Mongodb + React + Spring Boot
 MongoDB CRUD app with Spring Boot and ReactJS front-end
 
+Platform uses database "testdb":
+![Database](/db-01.jpg)
+
+Json view:
+![Database](/db-02.jpg)
+
 Aleksandra Cynk
 Olens Obertynska
 
